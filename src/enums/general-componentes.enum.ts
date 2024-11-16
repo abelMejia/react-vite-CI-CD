@@ -1,5 +1,6 @@
 export enum GeneralComponentsEnum {
   SideMenu = 'sideMenu',
   AppNavbar = 'appNavbar',
-  Header = 'header'
+  Header = 'header',
+  TopMenu = 'topMenu'
 }

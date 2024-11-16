@@ -12,6 +12,7 @@ import SideMenu from '@components/SideMenu';
 import AppNavbar from '@components/AppNavbar';
 import { GeneralComponentsEnum } from './enums/general-componentes.enum';
 import Header from '@components/Header';
+import TopMenu from '@components/TopMenu';
 
 interface TemplateFrameProps {
   showCustomTheme: boolean;
@@ -29,14 +30,13 @@ export default function TemplateFrame({
   pathname
 }: TemplateFrameProps) {
   const dashboardTheme = createTheme(getDashboardTheme(mode));
-
   const shouldRenderComponent = (component: string) => permissions[pathname] &&
       permissions[pathname].includes(component)
 
   const permissions: { [key: string]: any } = {
-      '/login': ['sideMenu', 'appNavbar', 'header'],
+      '/login': ['sideMenu', 'appNavbar', 'header', 'topMenu'],
       '/': ['sideMenu'],
-      '/signUp': ['sideMenu', 'appNavbar', 'header']
+      '/signUp': ['sideMenu', 'appNavbar', 'header', 'topMenu']
   }
 
   return (
@@ -46,6 +46,8 @@ export default function TemplateFrame({
             <Box sx={{ display: 'flex' }}>
                 {!shouldRenderComponent(GeneralComponentsEnum.SideMenu) && <SideMenu />}
                 {!shouldRenderComponent(GeneralComponentsEnum.AppNavbar) && <AppNavbar />}
+                {!shouldRenderComponent(GeneralComponentsEnum.AppNavbar) && <TopMenu />}
+
                 <Box
                   component="main"
                   sx={(theme) => ({
