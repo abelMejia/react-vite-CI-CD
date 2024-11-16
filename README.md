@@ -1,3 +1,25 @@
+# React + TypeScript + Vite + DOCKER
+To configure your system to access http://app.local/ via Traefik, you'll need to modify the hosts file on your local machine. This will map app.local to 127.0.0.1, which points to your local machine's network interface.
+
+1. Open the terminal.
+2. Run the following command to open the hosts file using a text editor (you may need to use sudo to get administrative access)
+```
+  sudo nano /etc/hosts
+```
+3. Add the following line at the end of the file:
+```
+  127.0.0.1   app.local
+```
+4. Save and close the file:
+  - If you're using nano, press Ctrl+X, then Y, and Enter to save and exit.
+5. To rebuild the containers and start them
+```
+  docker-compose build --no-cache
+  docker-compose up
+```
+
+Once you've updated your hosts file, you should be able to access your app by navigating to http://app.local in your web browser
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
