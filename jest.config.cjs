@@ -8,5 +8,15 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1', // Si usas alias
     '\\.(jpg|svg)$': '<rootDir>/__mocks__/fileMock.js'
   },
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  reporters: [
+    "default",
+    [
+      "jest-junit",
+      {
+        outputDirectory: "reports/junit",
+        outputName: "junit.xml",
+      },
+    ],
+  ],
 };
