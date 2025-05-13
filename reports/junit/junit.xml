@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" errors="0" time="0.708">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-05-13T02:25:14" time="0.414" tests="1">
-    <testcase classname=" renderiza correctamente" name=" renderiza correctamente" time="0.022">
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="0.882">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-05-13T04:08:43" time="0.389" tests="1">
+    <testcase classname=" renderiza correctamente" name=" renderiza correctamente" time="0.019">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button component" errors="0" failures="0" skipped="0" timestamp="2025-05-13T04:08:43" time="0.218" tests="1">
+    <testcase classname="Button component renders correctly" name="Button component renders correctly" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>
