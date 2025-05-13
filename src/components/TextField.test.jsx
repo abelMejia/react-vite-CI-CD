@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { Button } from "./Button";
+import { TextField } from './TextFiel';
 
 describe("Button component", () => {
   it("renders correctly", () => {
-    render(<Button />);
-    expect(screen.getByText("Click me!")).toBeInTheDocument();
+    render(<TextField />);
+    expect(screen.getByText("Click me")).toBeInTheDocument();
   });
 });
