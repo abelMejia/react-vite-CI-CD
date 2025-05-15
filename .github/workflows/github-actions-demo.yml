@@ -9,10 +9,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Cache Node.js modules
-        id: cache
-        uses: actions/cache@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -28,12 +24,9 @@ jobs:
 
       - name: Install Deps
         run: npm ci
-        with:
-          path: node_modules
-          key: node-modules-cache
 
-      #- name: Run tests
-      #  run: npm test
+      - name: Run tests
+        run: npm test
 
       - name: Build project
         run: npm run build
