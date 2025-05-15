@@ -18,3 +18,5 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: npm i --force
       - run: npm run build
+      - run: npm run test
+      - run: echo "🚀 The build was successful!"
