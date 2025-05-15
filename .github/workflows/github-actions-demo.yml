@@ -26,18 +26,23 @@ jobs:
           path: node_modules
           key: node-modules-cache
 
-      - name: Install dependencies
+      - name: Install Deps
         run: npm ci
         with:
           path: node_modules
           key: node-modules-cache
 
-      - name: Build project
-        run: npm run build
-
       #- name: Run tests
       #  run: npm test
 
+      - name: Build project
+        run: npm run build
+
+      - name: Ensure report directory exists
+        run: mkdir -p reports/junit
+
+      - name: Generate artifact
+        run: cd dist && zip -r artifact.zip .
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
