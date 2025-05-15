@@ -19,6 +19,13 @@ jobs:
           node-version: 18.x
           cache: 'npm'
 
+      - name: Cache Node Modules
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node-modules-cache
+
       - name: Install dependencies
         run: npm ci
         with:
