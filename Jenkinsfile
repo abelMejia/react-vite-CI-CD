@@ -42,4 +42,9 @@ pipeline {
             echo "Los tests han fallado."
         }
     }
+
+
+    triggers {
+        githubPush()
+    }
 }
